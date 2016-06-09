@@ -1,8 +1,9 @@
-package ua.goit.module_2.musicshop.main.java;
+package ua.goit.module_2.music_shop;
 
 import java.util.List;
 
-public class MusicShop {
+public class Shop {
+
     private List<Instrument> instruments;
 
     public List<Instrument> getInstruments() {
