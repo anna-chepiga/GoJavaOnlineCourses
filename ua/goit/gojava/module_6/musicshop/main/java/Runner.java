@@ -35,6 +35,8 @@ public class Runner {
         int numberOfPianosToRemove = order.get("piano");
         int numberOfTrumpetsToRemove = order.get("trumpet");
 
+        // антишаблон копипаст; можно заменить на один if с условием "или", например if(a<b || c<d || e<f)
+
         if (shop.getGuitars() < numberOfGuitarsToRemove) throw new IllegalStateException();
         if (shop.getPianos() < numberOfPianosToRemove) throw new IllegalStateException();
         if (shop.getTrumpets() < numberOfTrumpetsToRemove) throw new IllegalStateException();

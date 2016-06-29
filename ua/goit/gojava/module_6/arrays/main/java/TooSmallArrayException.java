@@ -1,6 +1,9 @@
 package ua.goit.gojava.module_6.arrays.main.java;
 
 public class TooSmallArrayException extends Exception {
+
+    //антишаблон boat anchor, код нигде не используется, решение - удалить
+
     /*private int lengthOfArray;
 
     public TooSmallArrayException(int lengthOfArray) {
@@ -10,4 +13,5 @@ public class TooSmallArrayException extends Exception {
     public int getLengthOfArray() {
         return lengthOfArray;
     }*/
+
 }
