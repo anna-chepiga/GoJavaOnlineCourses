@@ -7,7 +7,7 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        System.out.println("1) random massive; 2) manual massive");
+        System.out.println("Please select: 1) create array randomly; 2) create array manually:");
 
         Scanner sc = new Scanner(System.in);
 
@@ -15,12 +15,14 @@ public class Runner {
 
         switch (choice) {
             case "1":
-                System.out.println("random array is " + Arrays.toString(ArrayUtils.randomArray()));
-                System.out.println("min " + ArrayUtils.min + " max " + ArrayUtils.max);
+                System.out.println("The created random array is: " + Arrays.toString(ArrayUtils.randomArray()) + "\n" +
+                "In this array: minimum is " + ArrayUtils.min + ", maximum is " + ArrayUtils.max + "\n" +
+                "The same array sorted is: " + Arrays.toString(ArrayUtils.sortArray()));
                 break;
             case "2":
-                System.out.println("manual array is " + Arrays.toString(ArrayUtils.manualArray()));
-                System.out.println("min " + ArrayUtils.min + " max " + ArrayUtils.max);
+                System.out.println("The created manual array is: " + Arrays.toString(ArrayUtils.manualArray()) + "\n" +
+                "In this array: minimum is " + ArrayUtils.min + ", maximum is " + ArrayUtils.max + "\n" +
+                "The same array sorted is: " + Arrays.toString(ArrayUtils.sortArray()));
                 break;
             default:
                 System.out.println("Incorrect entry");
