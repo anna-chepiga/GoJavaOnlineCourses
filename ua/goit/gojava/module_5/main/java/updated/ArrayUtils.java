@@ -23,8 +23,8 @@ public class ArrayUtils {
         return new MinMaxPair(min, max);
     }
 
-    public static int[] sortArray(int[] array, int length) {
-        int[] sortedArray = Arrays.copyOf(array, length);
+    public static int[] sortArray(int[] array) {
+        int[] sortedArray = Arrays.copyOf(array, array.length);
         for (int i = sortedArray.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (sortedArray[j] > sortedArray[j + 1]) {
