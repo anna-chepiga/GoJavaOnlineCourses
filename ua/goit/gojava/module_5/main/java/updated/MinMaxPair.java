@@ -2,7 +2,7 @@ package ua.goit.gojava.module_5.main.java.updated;
 
 public class MinMaxPair {
 
-    int min, max;
+    private int min, max;
 
     public MinMaxPair(int min, int max) {
         this.min = min;

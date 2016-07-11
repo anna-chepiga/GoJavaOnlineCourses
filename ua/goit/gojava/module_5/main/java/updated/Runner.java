@@ -27,7 +27,9 @@ public class Runner {
                 int[] manualArray = createArray(sc);
 
                 System.out.println("Please enter array elements:");
-                for (int i = 0; i < manualArray.length; i++) manualArray[i] = sc.nextInt();
+                for (int i = 0; i < manualArray.length; i++) {
+                    manualArray[i] = sc.nextInt();
+                }
                 System.out.println("The created manual array is: " + Arrays.toString(manualArray));
 
                 manualArray = ArrayUtils.sortArray(manualArray);
