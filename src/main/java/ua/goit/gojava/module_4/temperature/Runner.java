@@ -4,6 +4,7 @@ public class Runner {
     public static void main(String[] args) {
         TemperatureChoiceBuilder builder = new TemperatureChoiceBuilder();
 
+        // если говорить в целом, то по-моему тут антишаблон ненужной сложности
 
         for (; ; ) {
             try {

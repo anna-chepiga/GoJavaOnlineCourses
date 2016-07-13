@@ -8,6 +8,8 @@ public class Runner {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // можно сказать, что шаблон копипаст в sout'ах
+
         System.out.println("Please select: 1) create array randomly; 2) create array manually:");
 
         try {

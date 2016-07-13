@@ -10,6 +10,8 @@ public class Coordinates {
     private static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
     private String[] split;
 
+    // антишаблон копипаст - похожие методы
+
     public void setFirstCoordinates() throws IOException {
         split = readCoordinates();
         x1 = Double.parseDouble(split[0]);

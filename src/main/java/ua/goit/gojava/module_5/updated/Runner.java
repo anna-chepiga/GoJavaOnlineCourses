@@ -7,6 +7,9 @@ public class Runner {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // можно сказать, что здесь антишаблон копи-паст в sout'ах,
+        //но мне кажется, в данном случае выделение sout'ов в отдельные методы ненужно усложнит задачу
+
         System.out.println("Please select: 1) create array randomly; 2) create array manually:");
         String choice = sc.next();
 
