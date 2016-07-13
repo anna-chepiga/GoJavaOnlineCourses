@@ -33,9 +33,9 @@ public class ArrayMinMaxWithException {
 
             System.out.println("\nmax = " + max + "; min = " + min);
 
-        } catch (NegativeArraySizeException hello) {
+        } catch (NegativeArraySizeException e) {
             System.out.println("[Error]: array length cannot be negative or zero number.");
-        } catch (TooSmallArrayException hello) {
+        } catch (TooSmallArrayException e) {
             System.out.println("[Warning]: It won't be possible to find min and max in a small array. Please enter an array length more than 2.");
         }
 
