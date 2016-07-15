@@ -3,11 +3,9 @@ package ua.goit.gojava.module_6.updated.distance;
 import java.io.IOException;
 
 public class Runner {
-
     private static Coordinates coordinates = new Coordinates();
 
     public static void main(String[] args) throws IOException {
-
         try {
             readCoordinates();
         } catch (ArrayIndexOutOfBoundsException e) {

@@ -1,7 +1,6 @@
 package ua.goit.gojava.module_6.updated.figures;
 
 public class Bootstrap {
-
     private static void printInitialDetails() {
         System.out.println("Select a figure and enter its number: \n 1. circle \n 2. triangle \n 3. square");
         System.out.println("Enter E to exit");
@@ -41,7 +40,6 @@ public class Bootstrap {
                         System.out.println("Please enter a number from 1 to 3 or E to exit\n");
                         continue;
                 }
-
             } catch (NumberFormatException e) {
                 System.out.println("Values should be numbers, please try again\n");
                 continue;
