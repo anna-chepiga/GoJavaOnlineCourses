@@ -19,8 +19,7 @@ public class Runner {
                 case 1:
                     int[] randomArray = createArray(sc);
                     if (randomArray.length < 5)
-                        throw new TooSmallArrayException("[Warning] It will not be possible to sort such a small array. " +
-                                "Array should contain at least 5 items");
+                        throw new TooSmallArrayException();
 
                     randomArray = ArrayUtils.createRandomArray(randomArray);
                     System.out.println("The created random array is: " + Arrays.toString(randomArray));
@@ -52,7 +51,7 @@ public class Runner {
         } catch (InputMismatchException e) {
             System.out.println("[Error] Make sure you enter integer numbers for array length and/or array items");
         } catch (TooSmallArrayException e) {
-            System.out.println(e.message);
+            System.out.println(e.getMessage());
         } catch (NegativeArraySizeException e) {
             System.out.println("[Error] Array cannot be of negative size");
         }
