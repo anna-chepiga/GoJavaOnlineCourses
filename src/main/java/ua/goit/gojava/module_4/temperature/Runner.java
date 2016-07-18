@@ -5,6 +5,7 @@ public class Runner {
         TemperatureChoiceBuilder builder = new TemperatureChoiceBuilder();
 
         // если говорить в целом, то по-моему тут антишаблон ненужной сложности
+        // вариант решения - один класс с двумя формулами и класс с main()
 
         for (; ; ) {
             try {

@@ -11,6 +11,8 @@ public class Coordinates {
     private String[] split;
 
     // антишаблон копипаст - похожие методы
+    // в качестве решения - создать один метод, который читал бы 4 разные цифры с клавиатуры
+    // но пока что мне не удалось адекватно его реализовать
 
     public void setFirstCoordinates() throws IOException {
         split = readCoordinates();

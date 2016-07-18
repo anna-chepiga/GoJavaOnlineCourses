@@ -8,7 +8,10 @@ public class Runner {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // можно сказать, что шаблон копипаст в sout'ах
+        // можно сказать, что здесь антишаблон копи-паст в sout'ах
+        // по сути печатается один и тот же текст везде и меняется только печатаемый список
+        // можно было бы вынести печать одинаковыъ кусков текста в отдельный метод
+        // но мне кажется, в данном случае это ненужно усложнит задачу, кода и так уже достаточно много
 
         System.out.println("Please select: 1) create array randomly; 2) create array manually:");
 
