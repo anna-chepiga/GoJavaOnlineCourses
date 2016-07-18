@@ -18,20 +18,31 @@ public class Bootstrap {
                     case "1":
                         Circle circle = new Circle();
                         System.out.println("You selected circle, please enter radius");
-                        circle.setRadius();
+
+                        double radius = InputScanner.readValue();
+                        circle.setRadius(radius);
+
                         figure = circle;
                         break;
                     case "2":
                         Triangle triangle = new Triangle();
                         System.out.println("You selected triangle, please enter height and width");
-                        triangle.setHeight();
-                        triangle.setWidth();
+
+                        double height = InputScanner.readValue();
+                        triangle.setHeight(height);
+
+                        double width = InputScanner.readValue();
+                        triangle.setWidth(width);
+
                         figure = triangle;
                         break;
                     case "3":
                         Square square = new Square();
                         System.out.println("You selected square, please enter side length");
-                        square.setSide();
+
+                        double side = InputScanner.readValue();
+                        square.setSide(side);
+
                         figure = square;
                         break;
                     case "E":

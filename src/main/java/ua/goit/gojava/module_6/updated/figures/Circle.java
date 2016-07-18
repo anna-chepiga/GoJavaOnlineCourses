@@ -3,8 +3,8 @@ package ua.goit.gojava.module_6.updated.figures;
 public class Circle implements Figure {
     private double radius;
 
-    public void setRadius() {
-        this.radius = InputScanner.readValue();
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
 
     @Override

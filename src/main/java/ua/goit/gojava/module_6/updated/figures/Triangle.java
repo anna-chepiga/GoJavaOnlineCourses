@@ -3,12 +3,12 @@ package ua.goit.gojava.module_6.updated.figures;
 public class Triangle implements Figure {
     private double height, width;
 
-    public void setHeight() {
-        this.height = InputScanner.readValue();
+    public void setHeight(double height) {
+        this.height = height;
     }
 
-    public void setWidth() {
-        this.width = InputScanner.readValue();
+    public void setWidth(double width) {
+        this.width = width;
     }
 
     @Override
