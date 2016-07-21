@@ -7,7 +7,7 @@ import java.util.Map;
 public class Runner {
     public static void main(String[] args) {
         MusicShop shop = new MusicShop();
-        shop.availableInShop();
+        shop.init();
 
         System.out.println("initially the shop contains " + shop.availableInShop.toString() + "\n");
 
@@ -45,10 +45,8 @@ public class Runner {
             System.out.println("removed instruments: " + instrumentsToRemove.size() + ", among them: " + order.toString());
 
             shop.leftInShop(order);
-        } catch (IllegalStateException e) {
-            System.out.println("not enough instruments in the shop");
-        } catch (AbsentInstrumentException e) {
-            System.out.println(e.getMessage());
+        } catch (IllegalStateException | AbsentInstrumentException ex) {
+            System.out.println(ex.getMessage());
         }
 
         System.out.println("instruments left in the shop: " + shop.availableInShop.toString() + "\n");

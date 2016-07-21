@@ -9,7 +9,7 @@ public class MusicShop {
 
     Map<String, Integer> availableInShop = new HashMap<>();
 
-    public Map<String, Integer> availableInShop() {
+    public Map<String, Integer> init() {
         availableInShop.put("guitar", 16);
         availableInShop.put("piano", 2);
         availableInShop.put("trumpet", 7);
@@ -18,24 +18,24 @@ public class MusicShop {
     }
 
     public List<Instrument> prepareInstruments(Map<String, Integer> order) throws AbsentInstrumentException {
-        for(Map.Entry<String, Integer> orderEntry : order.entrySet()) {
-            String instrumentType = orderEntry.getKey();
-            int numberOfInstrumentsToRemove = order.get(instrumentType);
+        for (Map.Entry<String, Integer> entry : order.entrySet()) {
+            String instrumentType = entry.getKey();
+            int instruments = entry.getValue();
 
             if (!availableInShop.containsKey(instrumentType)) throw new AbsentInstrumentException("shop does not contain " + instrumentType + "s");
-            if (availableInShop.get(instrumentType) < numberOfInstrumentsToRemove) throw new IllegalStateException();
+            if (availableInShop.get(instrumentType) < instruments) throw new IllegalStateException("not enough instruments in the shop");
         }
 
-        int numberOfGuitarsToRemove = order.get("guitar");
-        int numberOfPianosToRemove = order.get("piano");
-        int numberOfTrumpetsToRemove = order.get("trumpet");
+        int guitars = order.get("guitar");
+        int pianos = order.get("piano");
+        int trumpets = order.get("trumpet");
 
-        List<Instrument> instrumentsToRemove = new ArrayList<>();
-        for (int i = 0; i < numberOfGuitarsToRemove; i++) instrumentsToRemove.add(new Guitar());
-        for (int i = 0; i < numberOfPianosToRemove; i++) instrumentsToRemove.add(new Piano());
-        for (int i = 0; i < numberOfTrumpetsToRemove; i++) instrumentsToRemove.add(new Trumpet());
+        List<Instrument> toRemove = new ArrayList<>();
+        for (int i = 0; i < guitars; i++) toRemove.add(new Guitar());
+        for (int i = 0; i < pianos; i++) toRemove.add(new Piano());
+        for (int i = 0; i < trumpets; i++) toRemove.add(new Trumpet());
 
-        return instrumentsToRemove;
+        return toRemove;
     }
 
     public Map<String, Integer> leftInShop(Map<String, Integer> order) {
