@@ -5,7 +5,7 @@ import java.util.List;
 
 public class EnglishCesar {
 
-    List<Character> alphabet = new ArrayList<>();
+    private List<Character> alphabet = new ArrayList<>();
     private final static char[] PUNCTUATION = {'.', ',', ';', ':', '!', '?', '-', ' ', '\n', '\t', '='};
 
     EnglishCesar() {
