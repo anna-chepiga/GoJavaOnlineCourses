@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Runner {
 
-    static BunchOfFlowers generalBunch = new BunchOfFlowers();
-    static Rosebush rosebush = new Rosebush();
+    private static BunchOfFlowers generalBunch = new BunchOfFlowers();
+    private static Rosebush rosebush = new Rosebush();
 
     public static void main(String[] args) {
 
