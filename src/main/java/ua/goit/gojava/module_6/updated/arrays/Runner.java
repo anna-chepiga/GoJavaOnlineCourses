@@ -21,8 +21,8 @@ public class Runner {
             switch (choice) {
                 case 1:
                     int[] randomArray = createArray(sc);
-                    if (randomArray.length < 5)
-                        throw new TooSmallArrayException();
+                    if (randomArray.length < 5) throw new TooSmallArrayException("[Warning] It will not be possible to sort such a small array. " +
+                                "Array should contain at least 5 items");
 
                     randomArray = ArrayUtils.createRandomArray(randomArray);
                     System.out.println("The created random array is: " + Arrays.toString(randomArray));
