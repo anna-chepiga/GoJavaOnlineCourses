@@ -2,7 +2,7 @@ package ua.goit.gojava.module_9;
 
 public class Runner {
     public static void main(String[] args) {
-        EnglishCesar module9 = new EnglishCesar();
+        EnglishCesar cesar = new EnglishCesar();
 
         String text = "Map bunch: tulips=2, asters=4, roses=5\n\n" +
                 "Sorted map bunch: asters=3, daisies=5, roses=7\n\n" +
@@ -18,13 +18,13 @@ public class Runner {
                 "asters\t4\n" +
                 "roses\t5";
 
-        String encryptedText = module9.encrypt(text, 5);
+        String encryptedText = cesar.encrypt(text, 5);
 
         System.out.println("THE ENCRYPTED TEXT IS: \n" + encryptedText);
 
         System.out.println();
 
-        String decryptedText = module9.decrypt(encryptedText, 5);
+        String decryptedText = cesar.decrypt(encryptedText, 5);
 
         System.out.println("THE DECRYPTED TEXT IS: \n" + decryptedText);
     }
