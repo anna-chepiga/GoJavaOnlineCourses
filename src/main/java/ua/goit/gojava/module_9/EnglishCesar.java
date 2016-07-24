@@ -5,29 +5,29 @@ import java.util.List;
 
 public class EnglishCesar {
 
-    private List<Character> alphabet = new ArrayList<>();
+    private static final List<Character> ALPHABET = new ArrayList<>();
     private final static char[] PUNCTUATION = {'.', ',', ';', ':', '!', '?', '-', ' ', '\n', '\t', '='};
 
-    EnglishCesar() {
+    static {
         for (char c = 'a'; c <= 'z'; c++) {
-            alphabet.add(c);
+            ALPHABET.add(c);
         }
         for (char c = 'A'; c <= 'Z'; c++) {
-            alphabet.add(c);
+            ALPHABET.add(c);
         }
         for (char c = '0'; c <= '9'; c++) {
-            alphabet.add(c);
+            ALPHABET.add(c);
         }
         for (char c : PUNCTUATION) {
-            alphabet.add(c);
+            ALPHABET.add(c);
         }
     }
 
     // закоментированные строки нужны для аффинного шифра,
     // тогда к параметрам методов надо добавить int m, которое будет взаимно простым числом к размеру алфавита
 
-    String encrypt(String text, int key) {
-        int n = alphabet.size();
+    public static String encrypt(String text, int key) {
+        int n = ALPHABET.size();
         //m = m % n;
         key = key % n;
 
@@ -38,15 +38,15 @@ public class EnglishCesar {
 
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
-            int index = alphabet.indexOf(c);
+            int index = ALPHABET.indexOf(c);
             index = (index + key) % n;
-            cryptogram.append(alphabet.get(index));
+            cryptogram.append(ALPHABET.get(index));
         }
         return cryptogram.toString();
     }
 
-    public String decrypt(String text, int key) {
-        int n = alphabet.size();
+    public static String decrypt(String text, int key) {
+        int n = ALPHABET.size();
         //m = m % n;
         key = key % n;
         //int reversedM = -1;
@@ -60,9 +60,9 @@ public class EnglishCesar {
 
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
-            int index = alphabet.indexOf(c);
+            int index = ALPHABET.indexOf(c);
             index = ((index - key) % n + n) % n;
-            newText.append(alphabet.get(index));
+            newText.append(ALPHABET.get(index));
         }
         return newText.toString();
     }
