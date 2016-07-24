@@ -14,9 +14,7 @@ public class Flower {
 
     public String getColour() { return colour; }
 
-    public int getAmount() {
-        return amount;
-    }
+    public int getAmount() { return amount; }
 
     public String getName() { return name; }
 

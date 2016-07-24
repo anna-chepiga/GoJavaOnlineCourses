@@ -27,7 +27,7 @@ public class Runner {
         setBunch.add(new Tulip("white", 4, "tulips"));
         setBunch.add(new Tulip("green", 13, "tulips"));
 
-        System.out.println("Sorted set bunch: " + setBunch + "\n");
+        System.out.println("TreeSet bunch: " + setBunch + "\n");
 
         // коллекция list
         ArrayList<Flower> arrayListBunch = new ArrayList<>();

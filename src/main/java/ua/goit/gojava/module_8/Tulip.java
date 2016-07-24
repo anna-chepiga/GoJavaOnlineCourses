@@ -11,15 +11,12 @@ public class Tulip extends Flower implements Comparable<Tulip> {
     }
 
     @Override
-    public int compareTo(Tulip t) {
-        int result;
+    public int compareTo(Tulip other) {
+        int result = getAmount() - other.getAmount();
+        if (result != 0) {
+            return result;
+        }
 
-        result = super.getAmount() - t.getAmount();
-        if (result != 0) { return result; }
-
-        result = super.getColour().compareTo(t.getName());
-        if (result != 0) { return result; }
-
-        return 0;
+        return getColour().compareTo(other.getColour());
     }
 }
