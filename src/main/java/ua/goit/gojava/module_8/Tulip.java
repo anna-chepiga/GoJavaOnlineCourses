@@ -2,24 +2,21 @@ package ua.goit.gojava.module_8;
 
 public class Tulip extends Flower {
 
-    private String colour;
-    private int amount;
     private String name = "tulips";
 
     public Tulip(String colour, int amount) {
-        this.colour = colour;
-        this.amount = amount;
+        super(colour, amount);
     }
 
     public String getColour() {
-        return colour;
+        return super.getColour();
     }
 
-    public int getAmount() { return amount; }
+    public int getAmount() { return super.getAmount(); }
 
     public String getName() { return name; }
 
     public String toString() {
-        return amount + " " + colour + " " + name;
+        return super.getAmount() + " " + super.getColour() + " " + name;
     }
 }

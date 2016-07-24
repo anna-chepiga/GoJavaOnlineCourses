@@ -6,6 +6,11 @@ public class Flower {
     private int amount;
     private String name;
 
+    public Flower(String colour, int amount) {
+        this.colour = colour;
+        this.amount = amount;
+    }
+
     public String getColour() { return colour; }
 
     public int getAmount() {
