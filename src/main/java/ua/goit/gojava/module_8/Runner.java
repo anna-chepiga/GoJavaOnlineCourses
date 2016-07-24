@@ -29,10 +29,10 @@ public class Runner {
 
         // коллекция list
         ArrayList<Flower> arrayListBunch = new ArrayList<>();
-        arrayListBunch.add(new Aster("blue", 5));
-        arrayListBunch.add(new Rose("yellow", 4));
-        arrayListBunch.add(new Tulip("violet", 6));
-        arrayListBunch.add(new Daisy("white", 2));
+        arrayListBunch.add(new Aster("blue", 5, "asters"));
+        arrayListBunch.add(new Rose("yellow", 4, "roses"));
+        arrayListBunch.add(new Tulip("violet", 6, "tulips"));
+        arrayListBunch.add(new Daisy("white", 2, "daisies"));
 
         generalBunch.setFlowersList(arrayListBunch);
 
@@ -40,7 +40,7 @@ public class Runner {
 
         // коллекция linked list для формирования букета роз
         List<Rose> bush = new LinkedList<>();
-        bush.add(new Rose("red", 15));
+        bush.add(new Rose("red", 15, "roses"));
 
         rosebush.setNewRoseBush(bush);
 

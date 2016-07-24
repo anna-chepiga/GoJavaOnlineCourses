@@ -2,21 +2,11 @@ package ua.goit.gojava.module_8;
 
 public class Daisy extends Flower {
 
-    private String name = "daisies";
-
-    public Daisy(String colour, int amount) {
-        super(colour, amount);
+    public Daisy(String colour, int amount, String name) {
+        super(colour, amount, name);
     }
-
-    public String getColour() { return super.getColour(); }
-
-    public int getAmount() { return super.getAmount(); }
 
     public String getName() {
-        return name;
-    }
-
-    public String toString() {
-        return super.getAmount() + " " + super.getColour() + " " + name;
+        return "daisies";
     }
 }

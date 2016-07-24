@@ -6,9 +6,10 @@ public class Flower {
     private int amount;
     private String name;
 
-    public Flower(String colour, int amount) {
+    public Flower(String colour, int amount, String name) {
         this.colour = colour;
         this.amount = amount;
+        this.name = name;
     }
 
     public String getColour() { return colour; }
