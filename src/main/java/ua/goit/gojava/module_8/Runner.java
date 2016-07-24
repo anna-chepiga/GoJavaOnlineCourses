@@ -18,14 +18,16 @@ public class Runner {
 
         System.out.println("Map bunch: " + bunch + "\n");
 
-        // коллекция map отсортированная
         // к заданию 2. Создать упорядоченный список объектов из ДЗ по теме OOP in Java, не прибегая к  использованию Collections.sort().
-        Map<String, Integer> sortedBunch = new TreeMap<>();
-        sortedBunch.put("roses", 7);
-        sortedBunch.put("daisies", 5);
-        sortedBunch.put("asters", 3);
+        Set<Tulip> setBunch = new TreeSet<>();
+        setBunch.add(new Tulip("red", 5, "tulips"));
+        setBunch.add(new Tulip("black", 4, "tulips"));
+        setBunch.add(new Tulip("violet", 2, "tulips"));
+        setBunch.add(new Tulip("pink", 13, "tulips"));
+        setBunch.add(new Tulip("white", 4, "tulips"));
+        setBunch.add(new Tulip("green", 13, "tulips"));
 
-        System.out.println("Sorted map bunch: " + sortedBunch + "\n");
+        System.out.println("Sorted set bunch: " + setBunch + "\n");
 
         // коллекция list
         ArrayList<Flower> arrayListBunch = new ArrayList<>();
