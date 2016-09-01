@@ -9,8 +9,6 @@ public class Runner {
     public static void main(String[] args) throws IOException {
         String filename = "newfile.txt";
         String absolutePath = workingDir + File.separator + filename;
-        String content;
-        int key;
         Scanner sc = new Scanner(System.in);
 
         File file = new File(absolutePath);
@@ -20,23 +18,25 @@ public class Runner {
         }
 
         System.out.println("Please enter the text to encrypt and write into the file:");
-        content = sc.nextLine();
+        String content = sc.nextLine();
 
         System.out.println("Please enter the key length:");
-        key = sc.nextInt();
+        int key = sc.nextInt();
 
-        DataInputStream in = null;
+        if (key < 0) {
+            System.out.println("Key should be a positive number");
+        }
 
-        try {
+        try (DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(absolutePath)))) {
             DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(absolutePath)));
+
             String encrypted = CesarAlgorithm.encrypt(content, key);
             out.writeUTF(encrypted);
 
-            System.out.println("\nThe text is encrypted and written to newfile.txt");
+            System.out.println("The text is encrypted and written to newfile.txt");
 
             out.close();
 
-            in = new DataInputStream(new BufferedInputStream(new FileInputStream(absolutePath)));
             String readText = in.readUTF();
             String decrypted = CesarAlgorithm.decrypt(readText, key);
 
@@ -45,12 +45,6 @@ public class Runner {
             System.out.println("Reached the end of the file");
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Key should be a positive number");
-        } finally {
-            if (in != null) {
-                in.close();
-            }
         }
     }
 }
