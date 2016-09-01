@@ -23,28 +23,28 @@ public class Runner {
         System.out.println("Please enter the key length:");
         int key = sc.nextInt();
 
-        if (key < 0) {
+        if (key > 0) {
+            try (DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(absolutePath)))) {
+                DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(absolutePath)));
+
+                String encrypted = CesarAlgorithm.encrypt(content, key);
+                out.writeUTF(encrypted);
+
+                System.out.println("The text is encrypted and written to newfile.txt");
+
+                out.close();
+
+                String readText = in.readUTF();
+                String decrypted = CesarAlgorithm.decrypt(readText, key);
+
+                System.out.println("\nHere is the decrypted text:\n" + decrypted);
+            } catch (EOFException e) {
+                System.out.println("Reached the end of the file");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
             System.out.println("Key should be a positive number");
-        }
-
-        try (DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(absolutePath)))) {
-            DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(absolutePath)));
-
-            String encrypted = CesarAlgorithm.encrypt(content, key);
-            out.writeUTF(encrypted);
-
-            System.out.println("The text is encrypted and written to newfile.txt");
-
-            out.close();
-
-            String readText = in.readUTF();
-            String decrypted = CesarAlgorithm.decrypt(readText, key);
-
-            System.out.println("\nHere is the decrypted text:\n" + decrypted);
-        } catch (EOFException e) {
-            System.out.println("Reached the end of the file");
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }
